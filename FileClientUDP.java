@@ -62,7 +62,7 @@ public class FileClientUDP {
 
     // Prepare out going packet with application layer header
     //  -------------------------------------------------------------------------------
-    // |  client uuid (32 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
+    // |  client uuid (36 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
     //  -------------------------------------------------------------------------------
     private int prepOutgoingPkt(String payload) {
         // set header buffer
@@ -116,7 +116,7 @@ public class FileClientUDP {
 
     // send request to server with "get" command
     //  -------------------------------------------------------------------------------
-    // |  client uuid (32 byte) | pkt id (8 byte) |  payload length (4 byte) | get file |
+    // |  client uuid (36 byte) | pkt id (8 byte) |  payload length (4 byte) | get file |
     //  -------------------------------------------------------------------------------
     private void get(String filename) throws IOException {
         boolean cmdSent = false;

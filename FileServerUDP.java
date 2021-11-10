@@ -137,7 +137,7 @@ public class FileServerUDP {
 
         // Prepare out going packet with application layer header
         //  -------------------------------------------------------------------------------
-        // |  client uuid (32 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
+        // |  client uuid (36 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
         //  -------------------------------------------------------------------------------
         private byte [] prepOutgoingPkt(String UUID, long pktId, String payload) {
             // set header buffer
@@ -158,7 +158,7 @@ public class FileServerUDP {
 
         // Prepare out going packet with application layer header
         //  -------------------------------------------------------------------------------
-        // |  client uuid (32 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
+        // |  client uuid (36 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
         //  -------------------------------------------------------------------------------
         // Overload function for byte array payload
         private byte [] prepOutgoingPkt(String UUID, long pktId, byte [] payload) {
@@ -202,7 +202,7 @@ public class FileServerUDP {
 
         // Analyze incoming packet with application layer header
         //  -------------------------------------------------------------------------------
-        // |  client uuid (32 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
+        // |  client uuid (36 byte) | pkt id (8 byte) |  payload length (4 byte) | payload |
         //  -------------------------------------------------------------------------------
         private FilePacket getIncomingPkt(byte [] bufferArray) {
             ByteBuffer buffer = ByteBuffer.wrap(bufferArray);           // buffer wrapping the buffer array
